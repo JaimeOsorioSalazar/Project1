@@ -1,0 +1,36 @@
+binance:
+  api_key: "tu_api_key"
+  api_secret: "tu_api_secret"
+
+trading:
+  pair: "XLMUSDT"
+  interval: "KLINE_INTERVAL_1HOUR"
+  check_interval: 300
+
+model:
+  seq_length: 72
+  features: ["close", "volume", "rsi", "macd", "atr"]
+  learning_rate: 0.0005
+  epochs: 200
+  batch_size: 64
+
+risk:
+  per_trade: 0.02
+  stop_loss_multiplier: 1.5
+  take_profit_multiplier: 3.0
+
+data:
+  external_url: "https://www.cryptodatadownload.com/cdd/Binance_XLMUSDT_d.csv"
+  use_external: true
+  force_resample: true
+  resample_freq: "1H"
+  skip_rows: 1
+
+indicators:
+  macd:
+    fastperiod: 12
+    slowperiod: 26
+    signalperiod: 9
+  atr_period: 14
+
+
